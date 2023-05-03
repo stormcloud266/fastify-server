@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon serverless",
-    "start": "node serverless"
+    "start": "node serverless",
+    "vercel": "vercel dev"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +15,8 @@
     "dotenv": "^16.0.3",
     "fastify": "^4.17.0",
     "nodemon": "^2.0.22"
+  },
+  "devDependencies": {
+    "@vercel/node": "^2.14.1"
   }
 }
