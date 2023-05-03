@@ -16,7 +16,7 @@ export default async function (
       return res.status(500).send("Missing API key");
     }
 
-    const url = new URL("https://api.openweathermap.org/data/3.0/onecall");
+    const url = new URL("https://api.openweathermap.org/data/2.5/weather");
     url.searchParams.set("lat", "44.526340");
     url.searchParams.set("lon", "-109.056534");
     url.searchParams.set("appid", process.env.WEATHER_API_KEY);
