@@ -37,6 +37,7 @@ export default async function (
     url.searchParams.set("appid", process.env.WEATHER_API_KEY);
 
     const results = await fetch(url);
+    console.log("results: ", results);
 
     res.status(200).send(results);
   });
