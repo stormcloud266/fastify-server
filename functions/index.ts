@@ -1,30 +1,15 @@
 import {
+  FastifyError,
   FastifyInstance,
   FastifyReply,
   FastifyRequest,
   FastifyServerOptions,
 } from "fastify";
 
-interface IQueryString {
-  name: string;
-}
-
-interface IParams {
-  name: string;
-}
-
-interface CustomRouteGenericParam {
-  Params: IParams;
-}
-
-interface CustomRouteGenericQuery {
-  Querystring: IQueryString;
-}
-
 export default async function (
   instance: FastifyInstance,
   opts: FastifyServerOptions,
-  done
+  done: (err?: FastifyError) => void
 ) {
   instance.get("/", async (req: FastifyRequest, res: FastifyReply) => {
     if (!process.env.WEATHER_API_KEY) {
@@ -36,10 +21,12 @@ export default async function (
     url.searchParams.set("lon", "-109.056534");
     url.searchParams.set("appid", process.env.WEATHER_API_KEY);
 
-    const results = await fetch(url);
-    console.log("results: ", results);
+    const response = await fetch(url);
+    const data = await response.json();
 
-    res.status(200).send(results);
+    console.log("results: ", data);
+
+    res.status(200).send(data);
   });
 
   // instance.register(
