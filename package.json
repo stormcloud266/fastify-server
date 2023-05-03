@@ -3,20 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "dev": "nodemon serverless",
-    "start": "node serverless",
-    "vercel": "vercel dev"
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
-    "fastify": "^4.17.0",
-    "nodemon": "^2.0.22"
-  },
-  "devDependencies": {
-    "@vercel/node": "^2.14.1"
+    "fastify": "^4.17.0"
   }
 }
