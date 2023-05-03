@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon serverless",
-    "start": "node serverless",
-    "build": "node serverless"
+    "start": "node serverless"
   },
   "keywords": [],
   "author": "",
